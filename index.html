@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Cpath d='M18 33l9 9 19-20' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 </head>
 <body>
   <header class="nav">
@@ -42,9 +43,21 @@
           <a href="#projects" class="btn">View Projects</a>
           <a href="#contact" class="btn btn-outline">Get in Touch</a>
         </div>
-        <p class="location">&#128205; Bangalore, India</p>
+        <p class="location"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg> Bangalore, India</p>
         </div>
-        <div class="hero-avatar" aria-hidden="true"><span>DN</span></div>
+        <div class="terminal" aria-hidden="true">
+          <div class="term-bar"><i></i><i></i><i></i><span>regression_suite</span></div>
+          <div class="term-body">
+            <p><span class="t-accent">$</span> pytest tests/ -n auto --alluredir=reports</p>
+            <p><span class="t-ok">&#10003;</span> test_ota_upgrade <span class="t-ok">PASSED</span></p>
+            <p><span class="t-ok">&#10003;</span> test_live_tv_zapping <span class="t-ok">PASSED</span></p>
+            <p><span class="t-ok">&#10003;</span> test_iptv_playback <span class="t-ok">PASSED</span></p>
+            <p><span class="t-ok">&#10003;</span> test_tr069_provisioning <span class="t-ok">PASSED</span></p>
+            <p><span class="t-ok">&#10003;</span> test_firmware_rollout <span class="t-ok">PASSED</span></p>
+            <p class="t-summary"><span class="t-ok">1500 passed</span> &middot; 0 failed &middot; 50% faster</p>
+            <p><span class="t-accent">$</span> <span class="cursor"></span></p>
+          </div>
+        </div>
       </div>
     </section>
 
