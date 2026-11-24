@@ -8,22 +8,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg?v=4" />
+  <!-- Apply saved theme before paint to avoid a flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
 </head>
 <body>
+  <div class="progress" aria-hidden="true"></div>
   <header class="nav">
     <div class="container nav-inner">
       <a href="#home" class="logo">DN<span>.</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
+        <a href="#releases">Releases</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact" class="btn btn-small">Contact</a>
       </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode"><span class="i-moon">&#9790;</span><span class="i-sun">&#9728;</span></button>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      </div>
     </div>
   </header>
 
@@ -34,7 +48,7 @@
         <div class="hero-text">
         <p class="mono tag">&gt; pytest --role=SDET</p>
         <h1>Hi, I'm <span class="gradient">Dhiksha Nandhini S</span></h1>
-        <h2>SDET &amp; QA Automation Engineer</h2>
+        <h2 aria-label="SDET and QA Automation Engineer"><span class="typed" data-words='["SDET &amp; QA Automation Engineer","Android TV Test Specialist","Release Quality Owner","CI/CD Automation Builder"]'>SDET &amp; QA Automation Engineer</span><span class="caret" aria-hidden="true"></span></h2>
         <p class="lead">
           I build Python automation frameworks for Android TV set-top boxes and web platforms &mdash;
           turning thousands of manual checks into fast, reliable CI pipelines.
@@ -81,6 +95,11 @@
           I build Python automation frameworks with <strong>Appium, uiautomator2, Behave (BDD), Playwright and Pytest (POM)</strong>,
           integrated into <strong>Jenkins</strong> and <strong>GitHub Actions</strong>. Hands-on with IPTV/OTT, OTA, TR-069/ACS,
           network validation and root cause analysis using ADB, Logcat and Wireshark.
+        </p>
+        <p>
+          Beyond testing, I own release quality &mdash; I have handled the release of <strong>60+ APKs</strong> and
+          <strong>40+ final release builds</strong> across <strong>5 customer lines</strong>, maintain the
+          <strong>Confluence pages</strong> for our automation, and prepare the <strong>release notes</strong> for every major release.
         </p>
         <div class="clients">
           <span>Bell</span><span>du</span><span>Orange Moldova</span><span>DAZN</span><span>Genesis</span>
@@ -137,6 +156,8 @@
           </div>
           <ul>
             <li>QA validation of Android TV (ATV11/14) STB releases for du, Bell and ATV12 Orange Moldova, covering IPTV, OTT and networking features.</li>
+            <li>Handled the release of <strong>60+ APKs</strong> and <strong>40+ final release builds</strong> to customers across <strong>5 customer lines</strong>.</li>
+            <li>Maintain the Confluence pages for the automation framework and prepare release notes for every major release.</li>
             <li>Build and maintain Python automation with Appium, uiautomator2 and Behave (BDD) using Page Object Model, integrated into Jenkins CI/CD for regression, smoke and sanity runs on every build.</li>
             <li>Designed 1500+ test cases across Bell, du, ORM, Genesis and DAZN; manage test plans and execution in Xray.</li>
             <li>Execute functional, regression, smoke, sanity, integration, system, E2E, exploratory and UAT testing.</li>
@@ -176,11 +197,54 @@
       </div>
     </section>
 
+    <!-- RELEASES -->
+    <section id="releases" class="section container">
+      <h3 class="section-title"><span class="mono">04.</span> Release Ownership</h3>
+      <div class="release-banner">
+        <div class="rb-item reveal"><span class="num" data-target="60" data-suffix="+">0</span><span class="label">APKs Released</span></div>
+        <div class="rb-item reveal"><span class="num" data-target="40" data-suffix="+">0</span><span class="label">Final Release Builds</span></div>
+        <div class="rb-item reveal"><span class="num" data-target="5" data-suffix="">0</span><span class="label">Customer Lines</span></div>
+      </div>
+
+      <ol class="pipeline reveal" aria-label="Release pipeline">
+        <li style="--i:0"><span class="step-icon">&#128296;</span>Build</li>
+        <li style="--i:1"><span class="step-icon">&#128168;</span>Smoke &amp; Sanity</li>
+        <li style="--i:2"><span class="step-icon">&#128257;</span>Regression</li>
+        <li style="--i:3"><span class="step-icon">&#9989;</span>RC Validation</li>
+        <li style="--i:4"><span class="step-icon">&#128221;</span>Release Notes</li>
+        <li style="--i:5"><span class="step-icon">&#128640;</span>Customer Delivery</li>
+      </ol>
+
+      <div class="grid release-grid">
+        <div class="card reveal">
+          <h4>&#128640; Release Management</h4>
+          <p>Handled the release of <strong>60+ APKs</strong> and <strong>40+ final release builds</strong> to customers, validating each release candidate before delivery.</p>
+          <div class="chips"><span>Bell</span><span>du</span><span>Orange Moldova</span><span>DAZN</span><span>Genesis</span></div>
+        </div>
+        <div class="card reveal">
+          <h4>&#128216; Confluence Documentation</h4>
+          <p>Maintain the Confluence pages for the automation framework, keeping the team aligned on how to set up, run and extend the suites.</p>
+          <div class="chips"><span>Framework Setup</span><span>Execution Guides</span><span>Automation Coverage</span></div>
+        </div>
+        <div class="card reveal">
+          <h4>&#128221; Release Notes</h4>
+          <p>Prepare the release notes for every major release, giving customers and stakeholders a clear view of what shipped.</p>
+          <div class="chips"><span>Features</span><span>Fixes</span><span>Known Issues</span><span>Test Summary</span></div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
     <section id="projects" class="section container">
-      <h3 class="section-title"><span class="mono">04.</span> Technical Ownership &amp; Projects</h3>
+      <h3 class="section-title"><span class="mono">05.</span> Technical Ownership &amp; Projects</h3>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="atv" aria-pressed="false">Android TV</button>
+        <button class="filter-btn" data-filter="web" aria-pressed="false">Web &amp; API</button>
+        <button class="filter-btn" data-filter="tooling" aria-pressed="false">Tooling</button>
+      </div>
       <div class="grid projects-grid">
-        <article class="card project reveal">
+        <article class="card project reveal" data-cat="atv">
           <div class="project-icon">&#128250;</div>
           <h4>Android TV &ndash; Automated Regression &amp; Stability Testing</h4>
           <p class="sub">Bell, DAZN, du, Orange Moldova</p>
@@ -193,7 +257,7 @@
           <div class="tags"><span>Python</span><span>Behave</span><span>Appium</span><span>ADB</span><span>Jenkins</span><span>Allure</span></div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-cat="web">
           <div class="project-icon">&#127760;</div>
           <h4>STB Device Management Portal &ndash; Test Automation Framework</h4>
           <p class="sub">Web UI + REST API</p>
@@ -206,7 +270,7 @@
           <div class="tags"><span>Playwright</span><span>Pytest</span><span>POM</span><span>REST API</span><span>Docker</span><span>GitHub Actions</span></div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-cat="atv tooling">
           <div class="project-icon">&#127899;&#65039;</div>
           <h4>XTS Control Center &ndash; CTS/GTS/VTS/TVTS Execution Platform</h4>
           <p class="sub">Android compliance orchestration</p>
@@ -218,7 +282,7 @@
           <div class="tags"><span>Python</span><span>ADB</span><span>Tradefed</span></div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-cat="atv">
           <div class="project-icon">&#11014;&#65039;</div>
           <h4>OTA Firmware Upgrade Automation for Android TV</h4>
           <p class="sub">Release validation</p>
@@ -229,7 +293,7 @@
           <div class="tags"><span>Python</span><span>Behave</span><span>ADB</span><span>Jenkins</span></div>
         </article>
 
-        <article class="card project reveal">
+        <article class="card project reveal" data-cat="web atv tooling">
           <div class="project-icon">&#129517;</div>
           <h4>Navigate UI Test Automation Framework</h4>
           <p class="sub">Web &middot; Android TV &middot; iOS</p>
@@ -260,7 +324,7 @@
 
     <!-- EDUCATION & AWARDS -->
     <section id="education" class="section container">
-      <h3 class="section-title"><span class="mono">05.</span> Education &amp; Achievements</h3>
+      <h3 class="section-title"><span class="mono">06.</span> Education &amp; Achievements</h3>
       <div class="grid edu-grid">
         <div class="card reveal">
           <h4>&#127891; Education</h4>
@@ -287,7 +351,7 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section container contact reveal">
-      <h3 class="section-title center"><span class="mono">06.</span> Let's Connect</h3>
+      <h3 class="section-title center"><span class="mono">07.</span> Let's Connect</h3>
       <p class="lead center">Open to SDET and QA Automation opportunities. Feel free to reach out!</p>
       <div class="contact-links">
         <a class="btn" href="mailto:dhikshanandhiniselvakumar@gmail.com">&#9993;&#65039; Email Me</a>
@@ -301,6 +365,8 @@
     <p>&copy; <span id="year"></span> Dhiksha Nandhini S &middot; Built with HTML, CSS &amp; JS</p>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <a href="#home" class="to-top" aria-label="Back to top">&#8593;</a>
+
+  <script src="script.js?v=4"></script>
 </body>
 </html>
